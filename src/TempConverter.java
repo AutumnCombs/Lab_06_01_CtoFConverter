@@ -1,17 +1,27 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+import java.util.Scanner;
+
+public class TempConverter {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Scanner in = new Scanner(System.in);
+        double tempC = 0;
+        double tempF = 0;
+        String trash = "";
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        System.out.print("Enter the temperature in Celcius: ");
+
+            tempC = in.nextDouble();
+            in.nextLine();
+            tempF = (tempC * 1.8) + 32;
+            System.out.println("This is equivalent to " + tempF + " degrees F");
+
+       if (tempF == 32) {
+            System.out.println("This is the freezing point of water in Fahrenheit.");
+        } else if (tempF == 212) {
+            System.out.println("This is the boiling point of water in Fahrenheit.");
+        } else {
+            trash = in.nextLine();
+            System.out.println("You must enter a valid temperature not " + trash);
         }
     }
 }
